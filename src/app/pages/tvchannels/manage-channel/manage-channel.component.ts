@@ -31,6 +31,7 @@ export class ManageChannelComponent implements OnInit {
       edit: false,
       add: false,
       delete: false,
+      noDataMessage: 'No hay elementos que mostrar',
       custom: [
         {
           name: 'edit',

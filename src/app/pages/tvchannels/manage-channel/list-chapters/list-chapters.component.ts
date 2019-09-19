@@ -23,6 +23,7 @@ export class ListChaptersComponent implements OnInit {
       edit: true,
       add: false,
       delete: true,
+      noDataMessage: 'No hay elementos que mostrar',
       // custom: [
       //   {
       //     name: 'edit',
