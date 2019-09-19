@@ -1,0 +1,41 @@
+<form #showForm="ngForm" (ngSubmit)="onSubmit()">
+<nb-card>
+  <nb-card-header>Adicionar Programa</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <div class="form-group">
+          <label for="name" class="label">Nombre</label>
+          <input type="text" nbInput fullWidth id="name" [(ngModel)]="model.name" name="name" placeholder="Nombre">
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label for="description" class="label">Descripci&oacute;n</label>
+          <textarea id="description" nbInput fullWidth placeholder="Descripci&oacute;n" [(ngModel)]="model.description" name="description"></textarea>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="label">Imagen</label>
+          <input type="file" nbInput fullWidth name="image" (change)="fileSelected($event)" />
+        </div>
+      </div>
+    </div>
+    <button type="submit" nbButton><nb-icon icon="checkmark-outline"></nb-icon> Salvar</button>
+  </nb-card-body>
+</nb-card>
+</form>
+<!--<nb-card>-->
+  <!--<nb-card-header>-->
+    <!--Cap&iacute;tulos-->
+  <!--</nb-card-header>-->
+  <!--<nb-card-body>-->
+    <!--<div class="row">-->
+      <!--<div class="col-12">-->
+        <!--<ngx-upload-chapters></ngx-upload-chapters>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</nb-card-body>-->
+<!--</nb-card>-->
+<!--<router-outlet></router-outlet>-->

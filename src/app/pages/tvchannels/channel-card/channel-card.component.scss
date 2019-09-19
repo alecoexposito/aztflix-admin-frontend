@@ -1,0 +1,27 @@
+$channel-growth-factor: 1.5;
+$channel-fade-opacity:   0.25;
+$channel-normal-opacity: 1;
+$transition-time: 0.5s;
+
+.channel-cell {
+  overflow: hidden;
+}
+
+.channel-cell nb-card-body:hover {
+  //-webkit-transform: scale($channel-growth-factor);
+  //transform: scale($channel-growth-factor);
+  //opacity: $channel-normal-opacity;
+  //-webkit-transition: $transition-time;
+  //-moz-transition: $transition-time;
+  //-ms-transition: $transition-time;
+  //-o-transition: $transition-time;
+  //transition: $transition-time;
+  cursor: pointer;
+}
+
+.channel-cell nb-card-body > div:first-child {
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

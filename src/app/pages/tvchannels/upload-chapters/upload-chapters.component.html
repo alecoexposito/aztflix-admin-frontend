@@ -1,0 +1,83 @@
+<form #ourForm="ngForm">
+
+<div class="col-12 mb-3 chapters-drop-zone text-center align-items-center" [ngxDragAndDrop]="optionsDrop" *ngxInputFile="optionsInput" style="height: 200px;">
+  <p>De click o arrastre los capitulos a subir</p>
+</div>
+
+<div class="col-12">
+  <p *ngIf="uploader.queue.length > 0">Cantidad: <span> {{ uploader.queue.length }}</span></p>
+
+  <div class="card text-right">
+    <div style="margin: 15px">
+      <nb-progress-bar [value]="uploader.progressTotal" [displayValue]="true"></nb-progress-bar>
+    </div>
+    <div class="card-block">
+      <div class="btn-group m-2">
+        <button type="button" class="btn btn-outline-primary" (click)="uploadAll()"
+                [disabled]="!activeUploadAllBtn()">
+          <nb-icon icon="cloud-upload"></nb-icon> Subir Todos
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="uploader.cancelAll()"
+                [disabled]="!activeCancelAllBtn()">
+          <nb-icon icon="close-outline"></nb-icon> Cancelar Todos
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="uploader.removeAllFromQueue()"
+                [disabled]="!activeRemoveAllBtn()">
+          <nb-icon icon="trash-2-outline"></nb-icon> Eliminar Todos
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top: 20px">
+
+    <table class="table table-striped" style="font-size: 14px">
+      <thead>
+      <tr>
+        <th></th>
+        <th width="40%">Nombre</th>
+        <!--<th>N&uacute;mero</th>-->
+        <th>Tamaño</th>
+        <th>Progreso</th>
+        <th width="25%">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let itemFile of uploader.queue; let i = index"
+          [ngClass]="{'table-success' : itemFile.isSuccess, 'table-danger' : itemFile.isError, 'table-warning' : itemFile.isUploading  }">
+        <td>
+          <!--{{itemFile.isUploading}}-->
+          <div [ngxThumbnail]="itemFile"></div>
+        </td>
+        <td>{{ itemFile.file.name }}</td>
+        <!--<td><input [(ngModel)]="numbers[i]" name="chapterNumber" nbInput type="text" style="width: 70px;"></td>-->
+        <td>{{ itemFile.file.size/1024/1024 | number:'1.0-2' }} MB</td>
+        <td>
+          <div>
+            <nb-progress-bar [value]="itemFile.progress" [displayValue]="true">
+
+            </nb-progress-bar>
+          </div>
+        </td>
+        <td style="text-align: center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-primary btn-sm" (click)="upload(itemFile)"
+                    [disabled]="!itemFile.isReady">
+              <nb-icon icon="cloud-upload"></nb-icon>
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="itemFile.cancel()"
+                    [disabled]="!itemFile.uploadInProgress || itemFile.isCancel">
+              <nb-icon icon="close-outline"></nb-icon>
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="itemFile.remove()"
+                    [disabled]="itemFile.isSuccess || itemFile.uploadInProgress">
+              <nb-icon icon="trash-2-outline"></nb-icon>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</form>

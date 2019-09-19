@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Datos Generales</nb-card-header>
+      <nb-card-body>
+        <form class="form-inline">
+          <input type="text" nbInput fullWidth placeholder="Nombre" value="{{channel.name}}">
+          <button type="submit" nbButton status="primary"><nb-icon icon="checkmark-outline"></nb-icon> Actualizar</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Programas</nb-card-header>
+      <nb-card-body>
+
+        <div class="col-lg-12">
+          <nb-card>
+            <!--<nb-card-header>-->
+              <!--Listado-->
+            <!--</nb-card-header>-->
+            <nb-card-body>
+              <div class="col-lg-12 text-right">
+                <a [routerLink]="['/pages/tvchannels/manage-channel', id, 'add-show']" class="btn btn-outline-primary" ><nb-icon icon="plus"></nb-icon> Adicionar</a>
+              </div>
+              <div class="col-lg-6 col-sm-12 pl-0"><input #search class="search mb-1" type="text" fullWidth nbInput placeholder="Buscar.." (input)="onSearch(search.value)"></div>
+              <ng2-smart-table [settings]="settings" [source]="source" (custom)="onCustom($event)">
+              </ng2-smart-table>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-4">
+
+  </div>
+</div>

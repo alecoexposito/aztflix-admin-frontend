@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <div class="row">
+      <ngx-channel-card *ngFor="let channel of channels;" [logo]="getBackgroundImage(channel.logo)" [id]="channel._id">
+      </ngx-channel-card>
+  </div>
+</div>

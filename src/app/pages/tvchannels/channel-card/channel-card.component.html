@@ -1,0 +1,11 @@
+<nb-card class="channel-cell">
+  <nb-card-body class="bg-dark">
+    <div [style.background-image]="logo">
+    </div>
+    <div class="col-12 text-right align-text-bottom">
+      <a [routerLink]="['/pages/tvchannels/manage-channel',  id]" class="btn btn-outline-primary">
+        <nb-icon icon="settings-outline"></nb-icon>
+      </a>
+    </div>
+  </nb-card-body>
+</nb-card>

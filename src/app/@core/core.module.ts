@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
+import { NbAuthModule, NbAuthJWTToken, NbPasswordAuthStrategy} from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
@@ -51,23 +51,25 @@ import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
+import { ChannelService } from './services/channel.service';
+import {environment} from '../../environments/environment';
 
 const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
-  },
+  // {
+  //   url: 'https://github.com/akveo/nebular',
+  //   target: '_blank',
+  //   icon: 'github',
+  // },
+  // {
+  //   url: 'https://www.facebook.com/akveo/',
+  //   target: '_blank',
+  //   icon: 'facebook',
+  // },
+  // {
+  //   url: 'https://twitter.com/akveo_inc',
+  //   target: '_blank',
+  //   icon: 'twitter',
+  // },
 ];
 
 const DATA_SERVICES = [
@@ -105,17 +107,29 @@ export const NB_CORE_PROVIDERS = [
   ...NbAuthModule.forRoot({
 
     strategies: [
-      NbDummyAuthStrategy.setup({
+      NbPasswordAuthStrategy.setup({
         name: 'email',
-        delay: 3000,
+        token: {
+          class: NbAuthJWTToken,
+          key: 'token',
+        },
+        baseEndpoint: environment.apiUrl,
+        login: {
+          endpoint: '/login',
+          method: 'post',
+        },
+        register: {
+          endpoint: '/register',
+          method: 'post',
+        },
       }),
     ],
     forms: {
       login: {
-        socialLinks: socialLinks,
+        // socialLinks: socialLinks,
       },
       register: {
-        socialLinks: socialLinks,
+        // socialLinks: socialLinks,
       },
     },
   }).providers,
@@ -141,6 +155,7 @@ export const NB_CORE_PROVIDERS = [
   LayoutService,
   PlayerService,
   StateService,
+  ChannelService,
 ];
 
 @NgModule({
