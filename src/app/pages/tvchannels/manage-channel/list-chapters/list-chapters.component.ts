@@ -17,13 +17,13 @@ export class ListChaptersComponent implements OnInit {
   settings = {
     // hideSubHeader: true,
     // mode: 'external',
+    noDataMessage: 'No hay elementos que mostrar',
     actions: {
       position: 'right',
       columnTitle: 'Acciones',
       edit: true,
       add: false,
       delete: true,
-      noDataMessage: 'No hay elementos que mostrar',
       // custom: [
       //   {
       //     name: 'edit',

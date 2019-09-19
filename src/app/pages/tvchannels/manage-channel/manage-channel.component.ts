@@ -25,13 +25,13 @@ export class ManageChannelComponent implements OnInit {
   settings = {
     hideSubHeader: true,
     // mode: 'external',
+    noDataMessage: 'No hay elementos que mostrar',
     actions: {
       position: 'right',
       columnTitle: 'Acciones',
       edit: false,
       add: false,
       delete: false,
-      noDataMessage: 'No hay elementos que mostrar',
       custom: [
         {
           name: 'edit',
