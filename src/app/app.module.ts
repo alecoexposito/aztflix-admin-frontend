@@ -20,6 +20,14 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import {DropTargetOptions, NgxUploadModule} from '@wkoza/ngx-upload';
+import {FormsModule} from '@angular/forms';
+
+export const ngxDropTargetOptions: DropTargetOptions = {
+  color: 'dropZoneColor',
+  colorDrag: 'dropZoneColorDrag',
+  colorDrop: 'dropZoneColorDrop',
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +49,7 @@ import {
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
+    NgxUploadModule.forRoot(ngxDropTargetOptions),
   ],
   bootstrap: [AppComponent],
 })
