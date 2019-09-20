@@ -21,5 +21,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'monitor-outline',
     link: '/pages/tvchannels/list-tvchannels'
   },
+  {
+    title: 'Anuncios',
+    icon: 'video-outline',
+    link: '/pages/tvchannels/manage-ads'
+  },
 
 ];

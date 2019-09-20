@@ -53,6 +53,7 @@ import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { ChannelService } from './services/channel.service';
 import {environment} from '../../environments/environment';
+import {AdService} from './services/ad.service';
 
 const socialLinks = [
   // {
@@ -156,6 +157,7 @@ export const NB_CORE_PROVIDERS = [
   PlayerService,
   StateService,
   ChannelService,
+  AdService,
 ];
 
 @NgModule({

@@ -21,13 +21,17 @@ import {FormsModule} from '@angular/forms';
 import { EditShowComponent } from './manage-channel/edit-show/edit-show.component';
 import { ListChaptersComponent } from './manage-channel/list-chapters/list-chapters.component';
 import { RenderLinkComponent } from './manage-channel/render-link/render-link.component';
+import { ManageAdsComponent } from './manage-ads/manage-ads.component';
+import { UploadAdsComponent } from './upload-ads/upload-ads.component';
+import { ListAdsComponent } from './manage-ads/list-ads/list-ads.component';
+import { RenderLinkAdsComponent } from './manage-ads/render-link-ads/render-link-ads.component';
 
 
 
 @NgModule({
   declarations: [ListTvchannelsComponent, ChannelCardComponent,
     ManageChannelComponent, AddShowComponent, UploadChaptersComponent,
-    EditShowComponent, ListChaptersComponent, RenderLinkComponent],
+    EditShowComponent, ListChaptersComponent, RenderLinkComponent, ManageAdsComponent, UploadAdsComponent, ListAdsComponent, RenderLinkAdsComponent],
   imports: [
     CommonModule,
     TvchannelsRoutingModule,
@@ -42,7 +46,8 @@ import { RenderLinkComponent } from './manage-channel/render-link/render-link.co
     NbTabsetModule,
   ],
   entryComponents: [
-    RenderLinkComponent
+    RenderLinkComponent,
+    RenderLinkAdsComponent,
   ]
 })
 export class TvchannelsModule { }

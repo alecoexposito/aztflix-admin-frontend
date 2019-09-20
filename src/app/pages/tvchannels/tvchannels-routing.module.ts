@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {ListTvchannelsComponent} from './list-tvchannels/list-tvchannels.component';
 import {ManageChannelComponent} from './manage-channel/manage-channel.component';
 import {AddShowComponent} from './manage-channel/add-show/add-show.component';
-import {EditShowComponent} from "./manage-channel/edit-show/edit-show.component";
+import {EditShowComponent} from './manage-channel/edit-show/edit-show.component';
+import {ManageAdsComponent} from './manage-ads/manage-ads.component';
 
 const routes: Routes = [{
   path: 'list-tvchannels',
@@ -17,6 +18,9 @@ const routes: Routes = [{
 }, {
   path: 'manage-channel/:id/edit-show/:id_show',
   component: EditShowComponent,
+}, {
+  path: 'manage-ads',
+  component: ManageAdsComponent,
 }];
 
 @NgModule({

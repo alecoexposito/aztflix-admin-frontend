@@ -1,18 +1,1 @@
-<!--<table class="table table-bordered table-striped">-->
-  <!--<thead>-->
-    <!--<th>N&uacute;mero</th>-->
-    <!--&lt;!&ndash;<th>Nombre</th>&ndash;&gt;-->
-    <!--<th>T&iacute;tulo</th>-->
-    <!--<th>Video</th>-->
-  <!--</thead>-->
-  <!--<tbody>-->
-    <!--<tr *ngFor="let chapter of show.chapters">-->
-      <!--<td>{{chapter.number}}</td>-->
-      <!--&lt;!&ndash;<td>{{chapter.name}}</td>&ndash;&gt;-->
-      <!--<td>{{chapter.title}}</td>-->
-      <!--<td><a href="{{videoUrl}}/{{chapter.path}}" target="_blank">Ver Video</a> </td>-->
-    <!--</tr>-->
-  <!--</tbody>-->
-<!--</table>-->
-
 <ng2-smart-table [settings]="settings" [source]="show.chapters" (editConfirm)="confirmSave($event)" (deleteConfirm)="confirmDelete($event)"></ng2-smart-table>
