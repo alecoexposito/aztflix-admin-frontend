@@ -23,7 +23,6 @@ import { ListChaptersComponent } from './manage-channel/list-chapters/list-chapt
 import { RenderLinkComponent } from './manage-channel/render-link/render-link.component';
 import { ManageAdsComponent } from './manage-ads/manage-ads.component';
 import { UploadAdsComponent } from './upload-ads/upload-ads.component';
-import { ListAdsComponent } from './manage-ads/list-ads/list-ads.component';
 import { RenderLinkAdsComponent } from './manage-ads/render-link-ads/render-link-ads.component';
 
 
@@ -31,7 +30,7 @@ import { RenderLinkAdsComponent } from './manage-ads/render-link-ads/render-link
 @NgModule({
   declarations: [ListTvchannelsComponent, ChannelCardComponent,
     ManageChannelComponent, AddShowComponent, UploadChaptersComponent,
-    EditShowComponent, ListChaptersComponent, RenderLinkComponent, ManageAdsComponent, UploadAdsComponent, ListAdsComponent, RenderLinkAdsComponent],
+    EditShowComponent, ListChaptersComponent, RenderLinkComponent, ManageAdsComponent, UploadAdsComponent, RenderLinkAdsComponent],
   imports: [
     CommonModule,
     TvchannelsRoutingModule,
