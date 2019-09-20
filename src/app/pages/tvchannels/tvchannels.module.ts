@@ -30,7 +30,8 @@ import { RenderLinkAdsComponent } from './manage-ads/render-link-ads/render-link
 @NgModule({
   declarations: [ListTvchannelsComponent, ChannelCardComponent,
     ManageChannelComponent, AddShowComponent, UploadChaptersComponent,
-    EditShowComponent, ListChaptersComponent, RenderLinkComponent, ManageAdsComponent, UploadAdsComponent, RenderLinkAdsComponent],
+    EditShowComponent, ListChaptersComponent, RenderLinkComponent,
+    ManageAdsComponent, UploadAdsComponent, RenderLinkAdsComponent],
   imports: [
     CommonModule,
     TvchannelsRoutingModule,
