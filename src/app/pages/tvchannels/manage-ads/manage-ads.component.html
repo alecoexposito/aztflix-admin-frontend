@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-12">
+        <nb-tabset>
+          <nb-tab tabTitle="Anuncios">
+            <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="confirmSave($event)" (deleteConfirm)="confirmDelete($event)"></ng2-smart-table>
+          </nb-tab>
+          <nb-tab tabTitle="Subir Anuncios">
+            <ngx-upload-ads (uploadedAd)="onAdUploaded($event)"></ngx-upload-ads>
+          </nb-tab>
+        </nb-tabset>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
