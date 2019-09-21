@@ -15,8 +15,6 @@ export class ListChaptersComponent implements OnInit {
   @Input() idShow: string;
   videoUrl: string = environment.apiUrl + '/uploads/videos/';
   settings = {
-    // hideSubHeader: true,
-    // mode: 'external',
     noDataMessage: 'No hay elementos que mostrar',
     actions: {
       position: 'right',
@@ -24,25 +22,7 @@ export class ListChaptersComponent implements OnInit {
       edit: true,
       add: false,
       delete: true,
-      // custom: [
-      //   {
-      //     name: 'edit',
-      //     title: '<i class="nb-edit"></i>',
-      //   },
-      //   {
-      //     name: 'delete',
-      //     title: '<i class="nb-trash"></i>',
-      //   }
-      // ]
     },
-    // filter: {
-    //   inputClass: 'aaa',
-    // },
-    // add: {
-    //   addButtonContent: '<i class="nb-plus"></i>',
-    //   createButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    // },
     edit: {
       editButtonContent: '<i class="nb-edit"></i>',
       saveButtonContent: '<i class="nb-checkmark"></i>',
@@ -64,6 +44,11 @@ export class ListChaptersComponent implements OnInit {
         filter: true,
         sortDirection: 'asc',
       },
+      name: {
+        title: 'Nombre',
+        type: 'string',
+        filter: true,
+      },
       title: {
         title: 'Título',
         type: 'string',
@@ -74,6 +59,7 @@ export class ListChaptersComponent implements OnInit {
         type: 'custom',
         renderComponent: RenderLinkComponent,
         filter: false,
+        editable: false,
       },
     },
   };
