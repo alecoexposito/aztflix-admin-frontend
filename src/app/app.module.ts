@@ -22,6 +22,7 @@ import {
 } from '@nebular/theme';
 import {DropTargetOptions, NgxUploadModule} from '@wkoza/ngx-upload';
 import {FormsModule} from '@angular/forms';
+import {AuthModule} from "./auth/auth.module";
 
 export const ngxDropTargetOptions: DropTargetOptions = {
   color: 'dropZoneColor',
@@ -50,6 +51,7 @@ export const ngxDropTargetOptions: DropTargetOptions = {
     }),
     CoreModule.forRoot(),
     NgxUploadModule.forRoot(ngxDropTargetOptions),
+    AuthModule
   ],
   bootstrap: [AppComponent],
 })
